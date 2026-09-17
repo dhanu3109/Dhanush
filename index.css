@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-scale: 1;
+  }
+  
+  html {
+    font-size: calc(16px * var(--font-scale));
+    scroll-behavior: smooth;
+  }
+  
+  /* Focus accessibility outline for keyboard navigation */
+  :focus-visible {
+    outline: 3px solid #0284c7;
+    outline-offset: 3px;
+  }
+}
+
+/* Contrast Modes */
+
+/* High Contrast Yellow/Black Theme (WCAG AAA Compliance) */
+[data-contrast="yellow-black"] {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+
+[data-contrast="yellow-black"] * {
+  border-color: #ffff00 !important;
+}
+
+[data-contrast="yellow-black"] button,
+[data-contrast="yellow-black"] a,
+[data-contrast="yellow-black"] input,
+[data-contrast="yellow-black"] select {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 2px solid #ffff00 !important;
+}
+
+[data-contrast="yellow-black"] button:hover,
+[data-contrast="yellow-black"] a:hover {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+/* High Contrast Stark Light/Dark (WCAG AAA) */
+[data-contrast="high-contrast"] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+[data-contrast="high-contrast"] * {
+  border-color: #000000 !important;
+}
+
+[data-contrast="high-contrast"] .bg-slate-900,
+[data-contrast="high-contrast"] .bg-slate-800,
+[data-contrast="high-contrast"] .bg-slate-950 {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+[data-contrast="high-contrast"] button,
+[data-contrast="high-contrast"] a {
+  border: 2px solid #000000 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Glassmorphic card styling */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
